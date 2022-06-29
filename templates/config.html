@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% from 'bootstrap5/form.html' import render_field %}
+
+{% block title %}Config{% endblock %}
+
+{% block content %}
+    <div>
+        <h1>Configer your garden</h1>
+        <form method="post" action="{{ url_for('config') }}" enctype="multipart/form-data">
+            {{ garden_bed_form.csrf_token }}
+            <label for="garden_bed_name" style="font-size: 20px"><b>Garden Bed Size</b></label>
+            {{ render_field(garden_bed_form.width) }}
+            {{ render_field(garden_bed_form.length) }}
+            {{ render_field(garden_bed_form.submit) }}
+        </form>
+        <form method="post" action="{{ url_for('my_garden') }}" enctype="multipart/form-data">
+            {{ plant_form.csrf_token }}
+            {{ plant_form.hidden_tag() }}
+            {{ render_field(plant_form.plant_field) }}
+            {{ render_field(plant_form.num_plants) }}
+            {{ render_field(plant_form.submit) }}
+
+        </form>
+    </div>
+{% endblock content %}
+

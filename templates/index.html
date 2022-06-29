@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block title %}Hello{% endblock title %}
+
+{% block content %}
+    <h1>Welcome to the Garden Planner</h1>
+
+    <a href="{{ url_for('config') }}">Create a Garden</a>
+
+{% endblock content %}

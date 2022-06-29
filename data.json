@@ -1,0 +1,153 @@
+{
+  "broccoli": {
+    "name": "Broccoli",
+    "image": null,
+    "variety": "Marathon F1",
+    "numberPerSquareFoot": 1,
+    "growTime": 70,
+    "seedAmount": 1,
+    "amountOfSeeds": 0
+  },
+  "potato": {
+    "name": "Potato",
+    "image": null,
+    "variety": "Marris Piper",
+    "numberPerSquareFoot": 1,
+    "growTime": 90,
+    "amountOfSeeds": 0
+  },
+  "strawberry": {
+    "name": "Strawberries",
+    "image": null,
+    "variety": "Giant",
+    "numberPerSquareFoot": 1,
+    "growTime": 90,
+    "amountOfSeeds": 0
+  },
+  "mangetout": {
+    "name": "Sugar Pea",
+    "image": null,
+    "variety": "Speedy",
+    "numberPerSquareFoot": 1,
+    "growTime": 70,
+    "amountOfSeeds": 0
+  },
+  "carrot": {
+    "name": "Carrots",
+    "image": null,
+    "variety": "Autumn King",
+    "numberPerSquareFoot": 16,
+    "growTime": 100,
+    "amountOfSeeds": 0
+  },
+  "onion": {
+    "name": "Onions",
+    "image": null,
+    "variety": "Bedfordshire Champion",
+    "numberPerSquareFoot": 4,
+    "growTime": 100,
+    "amountOfSeeds": 0
+  },
+  "tomato": {
+    "name": "Tomatoes",
+    "image": null,
+    "variety": "Gardeners Delight",
+    "numberPerSquareFoot": 1,
+    "growTime": 70,
+    "amountOfSeeds": 0
+  },
+  "sunflower": {
+    "name": "Sunflower",
+    "image": null,
+    "variety": "Giant",
+    "numberPerSquareFoot": 1,
+    "growTime": 110,
+    "amountOfSeeds": 0
+  },
+  "lettuce": {
+    "name": "Lettuce",
+    "image": null,
+    "variety": "All Year Round",
+    "numberPerSquareFoot": 4,
+    "growTime": 30,
+    "amountOfSeeds": 0
+  },
+  "spring onion": {
+    "name": "Spring\nOnion",
+    "image": null,
+    "variety": "Ramrod",
+    "numberPerSquareFoot": 16,
+    "growTime": 50,
+    "amountOfSeeds": 0
+  },
+  "pumpkin": {
+    "name": "Pumpkin",
+    "variety": "Charmant PMR-F1",
+    "numberPerSquareFoot": 0.25,
+    "growTime": 110,
+    "amountOfSeeds": 0
+  },
+  "corn": {
+    "name": "Corn",
+    "variety": "Giant",
+    "numberPerSquareFoot": 1,
+    "growTime": 70,
+    "amountOfSeeds": 0
+  },
+  "eggplant": {
+    "name": "Eggplant",
+    "variety": "Giant",
+    "numberPerSquareFoot": 1,
+    "growTime": 70,
+    "amountOfSeeds": 0
+  },
+  "pepper": {
+    "name": "Pepper",
+    "variety": "Giant",
+    "numberPerSquareFoot": 1,
+    "growTime": 70,
+    "amountOfSeeds": 0
+  },
+  "zucchini": {
+    "name": "Zucchini",
+    "variety": "Giant",
+    "numberPerSquareFoot": 1,
+    "growTime": 70,
+    "amountOfSeeds": 0
+  },
+  "cucumber": {
+    "name": "Cucumber",
+    "variety": "Giant",
+    "numberPerSquareFoot": 1,
+    "growTime": 70,
+    "amountOfSeeds": 0
+  },
+  "garlic": {
+    "name": "Garlic",
+    "variety": "Giant",
+    "numberPerSquareFoot": 1,
+    "growTime": 70,
+    "amountOfSeeds": 0
+  },
+  "radish": {
+    "name": "Radish",
+    "variety": "Giant",
+    "numberPerSquareFoot": 1,
+    "growTime": 70,
+    "amountOfSeeds": 0
+  },
+  "sweet potato": {
+    "name": "Sweet Potato",
+    "variety": "Giant",
+    "numberPerSquareFoot": 1,
+    "growTime": 70,
+    "amountOfSeeds": 0
+  },
+  "parsnip": {
+    "name": "Parsnip",
+    "variety": "Giant",
+    "numberPerSquareFoot": 1,
+    "growTime": 70,
+    "amountOfSeeds": 0
+  }
+}
