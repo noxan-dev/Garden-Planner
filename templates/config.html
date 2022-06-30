@@ -4,7 +4,8 @@
 {% block title %}Config{% endblock %}
 
 {% block content %}
-    <div>
+<div class="container">
+    <div class="container-fluid">
         <h1>Configer your garden</h1>
         <form method="post" action="{{ url_for('config') }}" enctype="multipart/form-data">
             {{ garden_bed_form.csrf_token }}
@@ -13,14 +14,23 @@
             {{ render_field(garden_bed_form.length) }}
             {{ render_field(garden_bed_form.submit) }}
         </form>
+    </div>
+    <div class="container-fluid">
         <form method="post" action="{{ url_for('my_garden') }}" enctype="multipart/form-data">
-            {{ plant_form.csrf_token }}
-            {{ plant_form.hidden_tag() }}
-            {{ render_field(plant_form.plant_field) }}
-            {{ render_field(plant_form.num_plants) }}
-            {{ render_field(plant_form.submit) }}
-
+            <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+            {% for item in data %}
+                <div class="form-group">
+                    <div class="shadow-sm rounded m-2 p-2 w-50">
+                        <label for="plant_name" style="font-size: 20px"><b>{{ data[item]['name'] }}</b></label>
+                        <label>
+                            <input type="number" min="0" class="form-control" name="{{ data[item]['name'] }}" placeholder="Enter Plant Amount">
+                        </label>
+                    </div>
+                </div>
+            {% endfor %}
+            <input class="btn btn-primary mt-1" type="submit" value="Add to my garden" name="plant_form">
         </form>
     </div>
+</div>
 {% endblock content %}
 

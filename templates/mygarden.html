@@ -4,8 +4,8 @@
 
 {% block content %}
 <h3>hello</h3>
-    <table>
-
+    <table style="width: {{ my_garden['width'] }}px; height: {{ my_garden['length'] }}px;">
+        {{ my_garden }}
     </table>
 
 {% endblock content %}
