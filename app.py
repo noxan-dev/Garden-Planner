@@ -14,8 +14,9 @@ app = Flask(__name__)
 cache.init_app(app)
 csrf.init_app(app)
 
-app.config['TESTING'] = True
+
 app.config['SECRET_KEY'] = 'mysecretkey'
+app.config['TESTING'] = True
 TEMPLATES_AUTO_RELOAD = True
 
 bootstrap = Bootstrap5(app)
@@ -32,16 +33,15 @@ def index():
 def config():
     garden_bed_form = GardenBedSize()
 
-    data = json.loads(open('data.json').read())
+    plant_data = json.loads(open('data.json').read())
 
     if request.method == 'POST':
-        print(request.form)
         if garden_bed_form.submit.data and garden_bed_form.validate():
             flash('Garden bed size: {} x {}'.format(garden_bed_form.width.data, garden_bed_form.length.data))
             session['width'] = garden_bed_form.width.data
             session['length'] = garden_bed_form.length.data
             return redirect(url_for('config'))
-    return render_template('config.html', garden_bed_form=garden_bed_form, data=data)
+    return render_template('config.html', garden_bed_form=garden_bed_form, plants=plant_data)
 
 
 @app.route('/mygarden', methods=['GET', 'POST'])
@@ -54,17 +54,14 @@ def my_garden():
                       }
     if 'plant_form' in request.form:
         session['plants'] = {}
-        flash('Plants: {}'.format(request.form.get('plant')))
-        plant_form = request.form.to_dict()
-        plant_form_values = plant_form.values()
-        plant_form_keys = plant_form.keys()
-
-        for key in plant_form_keys:
-            for plant in plant_form_values:
-                if key is None:
+        for key, value in request.form.items():
+            if key != 'plant_form':
+                if key == 'csrf_token' or value == '':
                     continue
-                if key not in session['plants']:
-                    session['plants'][key] = plant
+                else:
+                    session['plants'][key] = int(value)
+                    print(type(value))
+        return redirect(url_for('my_garden'))
     return render_template('mygarden.html', my_garden=my_garden_dict)
 
 

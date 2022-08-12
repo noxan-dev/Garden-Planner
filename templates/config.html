@@ -4,33 +4,43 @@
 {% block title %}Config{% endblock %}
 
 {% block content %}
-<div class="container">
-    <div class="container-fluid">
-        <h1>Configer your garden</h1>
-        <form method="post" action="{{ url_for('config') }}" enctype="multipart/form-data">
-            {{ garden_bed_form.csrf_token }}
-            <label for="garden_bed_name" style="font-size: 20px"><b>Garden Bed Size</b></label>
-            {{ render_field(garden_bed_form.width) }}
-            {{ render_field(garden_bed_form.length) }}
-            {{ render_field(garden_bed_form.submit) }}
-        </form>
-    </div>
-    <div class="container-fluid">
-        <form method="post" action="{{ url_for('my_garden') }}" enctype="multipart/form-data">
-            <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
-            {% for item in data %}
-                <div class="form-group">
-                    <div class="shadow-sm rounded m-2 p-2 w-50">
-                        <label for="plant_name" style="font-size: 20px"><b>{{ data[item]['name'] }}</b></label>
-                        <label>
-                            <input type="number" min="0" class="form-control" name="{{ data[item]['name'] }}" placeholder="Enter Plant Amount">
-                        </label>
+    <div class="container mb-5">
+        <div class="container-fluid">
+            <h1>Configer your garden</h1>
+            <form method="post" action="{{ url_for('config') }}" enctype="multipart/form-data">
+                {{ garden_bed_form.csrf_token }}
+                <label for="garden_bed_name" style="font-size: 20px"><b>Garden Bed Size</b></label>
+                {{ render_field(garden_bed_form.width) }}
+                {{ render_field(garden_bed_form.length) }}
+                {{ render_field(garden_bed_form.submit) }}
+            </form>
+        </div>
+        <div class="container-fluid">
+            <h1>Select your plants</h1>
+            <div>
+                <form method="post" action="{{ url_for('my_garden') }}" enctype="multipart/form-data">
+                    <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+                    <div class="row g-3">
+                        {% for plant in plants %}
+                            <div class="form-group col-6">
+                                <div class="row shadow-sm rounded py-2 mx-1">
+                                    <label class="col-6" for="plant_name"
+                                           style="font-size: 20px"><b>{{ plants[plant]['name'] }}</b></label>
+                                    <label class="col-6">
+                                        <input type="number" min="0" class="form-control"
+                                               name="{{ plants[plant]['name'] }}" placeholder="Enter Plant Amount">
+                                    </label>
+                                </div>
+                            </div>
+                        {% endfor %}
+                        <input class="btn btn-primary col-12" type="submit" value="Add to my garden" name="plant_form">
                     </div>
-                </div>
-            {% endfor %}
-            <input class="btn btn-primary mt-1" type="submit" value="Add to my garden" name="plant_form">
-        </form>
+                    <div>
+
+                    </div>
+                </form>
+            </div>
+        </div>
     </div>
-</div>
 {% endblock content %}
 
